@@ -5,22 +5,26 @@ namespace Tienda
 {
     class Operacion
     {
-        public double Rest(double largo, double ancho, double alto, double area)
+        public double area(double largo, double ancho)
         {
-            if(Cesta.largo >= largo && Cesta.ancho >= ancho && Cesta.alto >= alto && Cesta.area >= area)
+            return largo * ancho;
+        }
+        public bool valida(double largo, double ancho, double alto)
+        {
+            if(largo <= 120 && ancho <= 80 && alto <= 30)
             {
-                return 1;
+                return true;
             }
             else
             {
-                return -1;
+                return false;
             }
         }
 
-        public bool validar(bool delicado, int cesta, int cestaLista)
+        public bool validaFruta(bool delicado, int cesta, int cestaLista)
         {
             if (delicado == false && cesta == cestaLista)
-            {
+            { 
                 return true;
             }
             else
